@@ -12,7 +12,7 @@ Telefon rehberi oluşturan program
 - Dosyanızın ismini uzantı olmadan girin.
     - Örnek: Dosyanızın ismi Rehberim.csv diyelim. O zaman Program çalıştığında Rehberim girmelisiniz.
 - İki dosya oluşturulacaktır. Bunlardan ilki yine csv formatında dosyanızın alfabetik olarak sıralanmış halidir. İkincisi ise vcf formatında telefonunuza aktarabileceğiniz dosyadır.
-- Daha fazla bilgi için [Açıklama Videosunu][https://youtu.be/w3-fggz-7UA "Telefon Rehberi Oluşturma"] izleyebilirsiniz
+- Daha fazla bilgi için [Açıklama Videosunu](https://youtu.be/w3-fggz-7UA "Telefon Rehberi Oluşturma"= izleyebilirsiniz
 
 
 ### Linux
