@@ -7,7 +7,6 @@
 #include <algorithm>
 
 
-const char* TurkishChars[12] ={"Ç","Ğ","İ","Ö","Ş","Ü","ç","ğ","ı","ö","ş","ü"};
 int Index[12] = {68, 73, 76, 83, 88, 91, 68, 73, 75, 83, 88, 91};
 
 int CharToNum(const char* line, int position);
@@ -46,12 +45,37 @@ int main()
 int SpecialCharToNum(const char* line, int position)
 {
     int Result = 0;
-    for (int i = 0; i < 12; i++)
+    int Index1 = 0;
+    if (line[position] == -61 && line[position+1] == -121)
+        Index1 = 1;
+    else if (line[position] == -60 && line[position+1] == -98)
+        Index1 = 2;
+    else if (line[position] == -60 && line[position+1] == -80)
+        Index1 = 3;
+    else if (line[position] == -61 && line[position+1] == -106)
+        Index1 = 4;
+    else if (line[position] == -59 && line[position+1] == -98)
+        Index1 = 5;
+    else if (line[position] == -61 && line[position+1] == -100)
+        Index1 = 6;
+    else if (line[position] == -61 && line[position+1] == -89)
+        Index1 = 7;
+    else if (line[position] == -60 && line[position+1] == -97)
+        Index1 = 8;
+    else if (line[position] == -60 && line[position+1] == -79)
+        Index1 = 9;
+    else if (line[position] == -61 && line[position+1] == -74)
+        Index1 = 10;
+    else if (line[position] == -59 && line[position+1] == -97)
+        Index1 = 11;
+    else if (line[position] == -61 && line[position+1] == -68)
+        Index1 = 12;
+    else
+        Index1 = 0;
+
+    if (Index1)
     {
-        if(memcmp(line+position,TurkishChars[i],2) == 0)
-        {
-            Result = Index[i];
-        }
+        Result = Index[Index1 - 1];
     }
     return Result;
 }
@@ -347,16 +371,40 @@ std::string SpecialCharToHexString(const char* line, int position, bool &isSpeci
 {
     isSpecial = false;
     std::string HexString = "";
-    for (int i = 0; i < 12; i++)
+    int Index1 = 0;
+    if (line[position] == -61 && line[position + 1] == -121)
+        Index1 = 1;
+    else if (line[position] == -60 && line[position + 1] == -98)
+        Index1 = 2;
+    else if (line[position] == -60 && line[position + 1] == -80)
+        Index1 = 3;
+    else if (line[position] == -61 && line[position + 1] == -106)
+        Index1 = 4;
+    else if (line[position] == -59 && line[position + 1] == -98)
+        Index1 = 5;
+    else if (line[position] == -61 && line[position + 1] == -100)
+        Index1 = 6;
+    else if (line[position] == -61 && line[position + 1] == -89)
+        Index1 = 7;
+    else if (line[position] == -60 && line[position + 1] == -97)
+        Index1 = 8;
+    else if (line[position] == -60 && line[position + 1] == -79)
+        Index1 = 9;
+    else if (line[position] == -61 && line[position + 1] == -74)
+        Index1 = 10;
+    else if (line[position] == -59 && line[position + 1] == -97)
+        Index1 = 11;
+    else if (line[position] == -61 && line[position + 1] == -68)
+        Index1 = 12;
+    else
+        Index1 = 0;
+
+    if (Index1)
     {
-        if(memcmp(line+position,TurkishChars[i],2) == 0)
-        {
-            unsigned char char1 = (unsigned char)line[position];
-            unsigned char char2 = (unsigned char)line[position+1];
-            HexString += "=" + hex(char1) + "=" + hex(char2);
-            isSpecial = true;
-            break;
-        }
+        unsigned char char1 = (unsigned char)line[position];
+        unsigned char char2 = (unsigned char)line[position + 1];
+        HexString += "=" + hex(char1) + "=" + hex(char2);
+        isSpecial = true;
     }
     return HexString;
 }
