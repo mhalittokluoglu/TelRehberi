@@ -30,9 +30,9 @@ std::vector<std::string> split(std::string String, std::string splitstring);
 int main()
 {
     std::string InputFileName,SortedFileName,OutputFileName;
-    std::cout << "Dosya Adını Uzantısız Giriniz (Örnek olarak dosyanızın adı Rehber.csv ise Rehber olarak giriniz):\n";
+    std::cout << "Dosya ismini uzanti olmadan giriniz (Mesela dosya ismi Rehber.csv ise Rehber olarak giriniz):\n";
     std::cin >> InputFileName;
-    SortedFileName = InputFileName + "_Sıralanmış.csv";
+    SortedFileName = InputFileName + "_Alfabetik_SIRALI.csv";
     OutputFileName = InputFileName + ".vcf";
     InputFileName += ".csv";
 
