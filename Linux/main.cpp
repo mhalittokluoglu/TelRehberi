@@ -87,7 +87,7 @@ bool CompareLines(const char* line1, const char* line2)
     size_t size1 = strlen(line1);
     size_t size2 = strlen(line2);
     
-    while(line1[index1] != 0 && line2[index2] != 0)
+    while(line1[index1] != ',' && line2[index2] != ',')
     {
         // Converting Char To Number
         Number1 = SpecialCharToNum(line1,index1);
